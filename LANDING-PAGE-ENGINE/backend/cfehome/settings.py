@@ -53,10 +53,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "cfehome.urls"
 
+
+if DEBUG:
+    REACT_INDEX_DIR = BASE_DIR / "staticfiles/frontend/dev"
+else:
+    REACT_INDEX_DIR = BASE_DIR / "staticfiles/frontend/prod"
+
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [REACT_INDEX_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -120,7 +127,7 @@ USE_TZ = True
 #nginx, s3 -> django-storages, whitenoise
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-   BASE_DIR / "production-cdn"
+   BASE_DIR / "staticfiles"
 ]
 if DEBUG:
     STATIC_ROOT = BASE_DIR.parent / "local-cdn"
