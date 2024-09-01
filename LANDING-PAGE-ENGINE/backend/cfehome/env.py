@@ -12,5 +12,7 @@ ENV_PATH = BASE_DIR.parent / '.env'
 def get_config(use_gcloud=True):
     if ENV_PATH.exists():
         return Config(RepositoryEnv(ENV_PATH))
-    from decouple import config
-    return config
+
+    return Config
+
+config = get_config()

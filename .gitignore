@@ -165,6 +165,7 @@ cython_debug/
 #custom
 venv/
 .env
+local-cdn/
 
 # Logs
 logs
