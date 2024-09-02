@@ -1,8 +1,6 @@
-import io
-import os
-import pathlib
 from decouple import Config, RepositoryEnv
 from functools import lru_cache
+import pathlib
 
 BASE_DIR = pathlib.Path(__file__).parent.parent
 
