@@ -72,6 +72,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "cfehome.context_processor.reactjs_assets_paths",
+                "cfehome.context_processor.tiny_api_key",
             ],
         },
     },
@@ -130,9 +131,9 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
    BASE_DIR / "staticfiles"
 ]
-if DEBUG:
-    STATIC_ROOT = BASE_DIR.parent / "local-cdn"
-else:
+# if DEBUG is True:
+#     STATIC_ROOT = BASE_DIR.parent / "local-cdn"
+if DEBUG is False:
     STATIC_ROOT = BASE_DIR / "production-cdn"
 
 # Default primary key field type

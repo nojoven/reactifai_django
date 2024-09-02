@@ -10,3 +10,9 @@ def reactjs_assets_paths(request):
         # "reactjs_assets_svg_paths":[str(x.relative_to(root_reactjs_dir)) for x in assets_dir.glob("*.svg")],
         "vite_icon": settings.REACT_INDEX_DIR / "vite.svg",
     }
+
+
+def tiny_api_key(request):
+    return {
+        "tiny_api_key": config("TINY_API_KEY", default="", cast=str)
+    }
