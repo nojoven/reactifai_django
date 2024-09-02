@@ -26,7 +26,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,9 +54,9 @@ MIDDLEWARE = [
 ROOT_URLCONF = "cfehome.urls"
 
 
-if DEBUG:
+if DEBUG is True:
     REACT_INDEX_DIR = BASE_DIR / "staticfiles/frontend/dev"
-else:
+if DEBUG is False:
     REACT_INDEX_DIR = BASE_DIR / "staticfiles/frontend/prod"
 
 
