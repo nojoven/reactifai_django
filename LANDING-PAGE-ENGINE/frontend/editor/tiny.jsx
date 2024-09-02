@@ -7,7 +7,7 @@ export default function TinyMCE() {
   const editorRef = useRef(null);
   
   // Find the API key on the dashboard of your TinyMCE account.
-  const apiKey = '' ;
+  const apiKey = '';
   
   const log = () => {
     if (editorRef.current) {
